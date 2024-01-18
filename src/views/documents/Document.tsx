@@ -23,6 +23,7 @@ import { cilArrowCircleLeft } from '@coreui/icons'
 import { useTypedSelector } from '../../store'
 import { Viewer, Worker, RenderPageProps } from '@react-pdf-viewer/core'
 import { printOrDownloadDoc } from '../../utils'
+import SaveAndPrintButtons from '../../components/SaveAndPrintButtons'
 
 const CustomPageLayer: React.FC<{
   renderPageProps: RenderPageProps
@@ -135,6 +136,7 @@ const Document = (): JSX.Element => {
           </div>
         </CCardBody>
       </CCard>
+      <SaveAndPrintButtons marginTop="50px" />
     </CContainer>
   )
 }

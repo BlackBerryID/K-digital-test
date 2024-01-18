@@ -36,6 +36,7 @@ import Modal from '../../components/Modal'
 import DocumentsApi from '../documents/Documents.Api'
 import AuthApi from '../auth/auth.api'
 import Card from '../../components/Card'
+import SaveAndPrintButtons from '../../components/SaveAndPrintButtons'
 
 import { getImagePlaceholderFromMime, phoneNumber } from '../../utils'
 import setTime, { setTimeV2 } from '../../helper/timeFormat'
@@ -1120,6 +1121,7 @@ const OrderDetail = (): JSX.Element => {
                       </div>
                     </div>
                   </div>
+                  <SaveAndPrintButtons marginTop="200px" />
                 </CForm>
               </CCol>
             </CCardBody>
@@ -1744,6 +1746,7 @@ const OrderDetail = (): JSX.Element => {
                         </div>
                       </div>
                     </div>
+                    <SaveAndPrintButtons marginTop="70px" />
                   </CForm>
                 </CCol>
               </CCardBody>
@@ -1984,6 +1987,7 @@ const OrderDetail = (): JSX.Element => {
 
                     {/* BUTTOM BORDER */}
                   </div>
+                  <SaveAndPrintButtons marginTop="50px" />
                 </CForm>
               </CCol>
             </CCardBody>
