@@ -76,7 +76,7 @@ const Document = (): JSX.Element => {
 
   return (
     <CContainer>
-      <CCard>
+      <CCard id="document">
         <CCardHeader className="px-4">
           <div>{docName}</div>
         </CCardHeader>
@@ -136,7 +136,7 @@ const Document = (): JSX.Element => {
           </div>
         </CCardBody>
       </CCard>
-      <SaveAndPrintButtons marginTop="50px" />
+      <SaveAndPrintButtons marginTop="50px" elIdToPrint="document" />
     </CContainer>
   )
 }

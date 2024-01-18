@@ -1,10 +1,17 @@
 import { CButton } from '@coreui/react-pro'
+import printJS from 'print-js'
 
 interface SaveAndPrintButtonsProps {
   marginTop?: string
+  elIdToPrint: string
+  elToPrintStyle?: string
 }
 
-const SaveAndPrintButtons = ({ marginTop }: SaveAndPrintButtonsProps) => {
+const SaveAndPrintButtons = ({
+  marginTop,
+  elIdToPrint,
+  elToPrintStyle,
+}: SaveAndPrintButtonsProps) => {
   return (
     <div
       style={{
@@ -21,7 +28,19 @@ const SaveAndPrintButtons = ({ marginTop }: SaveAndPrintButtonsProps) => {
         Скачать
       </CButton>
       <CButton
-        style={{ backgroundColor: '#747DEA', maxWidth: '309px', width: '100%' }}
+        style={{
+          backgroundColor: '#747DEA',
+          maxWidth: '309px',
+          width: '100%',
+        }}
+        onClick={() => {
+          printJS({
+            printable: elIdToPrint,
+            type: 'html',
+            style: elToPrintStyle,
+            targetStyles: ['*'],
+          })
+        }}
       >
         Печать
       </CButton>
