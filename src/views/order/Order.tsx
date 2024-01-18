@@ -429,7 +429,7 @@ const OrderDetail = (): JSX.Element => {
                   wordBreak: 'break-word',
                 }}
               >
-                <CForm>
+                <CForm id="order">
                   {/* UPPER INFO BORDER */}
                   <div
                     className="avoid-break-inside"
@@ -1121,8 +1121,12 @@ const OrderDetail = (): JSX.Element => {
                       </div>
                     </div>
                   </div>
-                  <SaveAndPrintButtons marginTop="200px" />
                 </CForm>
+                <SaveAndPrintButtons
+                  marginTop="200px"
+                  elIdToPrint="order"
+                  elToPrintStyle=".sign-section {display:block !important}"
+                />
               </CCol>
             </CCardBody>
           </CCard>
@@ -1150,6 +1154,7 @@ const OrderDetail = (): JSX.Element => {
                     style={{
                       wordBreak: 'break-word',
                     }}
+                    id="order-act"
                   >
                     {/* UPPER INFO BORDER */}
                     {isView ? (
@@ -1746,8 +1751,12 @@ const OrderDetail = (): JSX.Element => {
                         </div>
                       </div>
                     </div>
-                    <SaveAndPrintButtons marginTop="70px" />
                   </CForm>
+                  <SaveAndPrintButtons
+                    marginTop="70px"
+                    elIdToPrint="order-act"
+                    elToPrintStyle="#sign-section-act {display:block !important}"
+                  />
                 </CCol>
               </CCardBody>
             </CCard>
@@ -1854,7 +1863,7 @@ const OrderDetail = (): JSX.Element => {
                   wordBreak: 'break-word',
                 }}
               >
-                <CForm>
+                <CForm id="order-comments">
                   {/* UPPER INFO BORDER */}
                   {isView ? (
                     <div>
@@ -1987,8 +1996,11 @@ const OrderDetail = (): JSX.Element => {
 
                     {/* BUTTOM BORDER */}
                   </div>
-                  <SaveAndPrintButtons marginTop="50px" />
                 </CForm>
+                <SaveAndPrintButtons
+                  marginTop="50px"
+                  elIdToPrint="order-comments"
+                />
               </CCol>
             </CCardBody>
           </CCard>
