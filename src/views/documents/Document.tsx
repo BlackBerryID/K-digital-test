@@ -23,6 +23,7 @@ import { cilArrowCircleLeft } from '@coreui/icons'
 import { useTypedSelector } from '../../store'
 import { Viewer, Worker, RenderPageProps } from '@react-pdf-viewer/core'
 import { printOrDownloadDoc } from '../../utils'
+import SaveAndPrintButtons from '../../components/SaveAndPrintButtons'
 
 const CustomPageLayer: React.FC<{
   renderPageProps: RenderPageProps
@@ -108,6 +109,7 @@ const Document = (): JSX.Element => {
                       // height: '490px',
                       width: '100%',
                     }}
+                    id="document"
                   >
                     <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.5.141/build/pdf.worker.min.js">
                       <Viewer
@@ -135,6 +137,7 @@ const Document = (): JSX.Element => {
           </div>
         </CCardBody>
       </CCard>
+      <SaveAndPrintButtons marginTop="50px" elId="document" elementType="pdf" />
     </CContainer>
   )
 }

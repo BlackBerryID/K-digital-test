@@ -36,6 +36,7 @@ import Modal from '../../components/Modal'
 import DocumentsApi from '../documents/Documents.Api'
 import AuthApi from '../auth/auth.api'
 import Card from '../../components/Card'
+import SaveAndPrintButtons from '../../components/SaveAndPrintButtons'
 
 import { getImagePlaceholderFromMime, phoneNumber } from '../../utils'
 import setTime, { setTimeV2 } from '../../helper/timeFormat'
@@ -428,7 +429,7 @@ const OrderDetail = (): JSX.Element => {
                   wordBreak: 'break-word',
                 }}
               >
-                <CForm>
+                <CForm id="order">
                   {/* UPPER INFO BORDER */}
                   <div
                     className="avoid-break-inside"
@@ -1087,6 +1088,7 @@ const OrderDetail = (): JSX.Element => {
                   </div>
                   <div
                     className="sign-section"
+                    id="sign-section"
                     style={{
                       display: 'none',
                     }}
@@ -1121,6 +1123,12 @@ const OrderDetail = (): JSX.Element => {
                     </div>
                   </div>
                 </CForm>
+                <SaveAndPrintButtons
+                  marginTop="200px"
+                  elId="order"
+                  elToPrintStyle="#sign-section {display:block !important}"
+                  hiddenSectionId="sign-section"
+                />
               </CCol>
             </CCardBody>
           </CCard>
@@ -1148,6 +1156,7 @@ const OrderDetail = (): JSX.Element => {
                     style={{
                       wordBreak: 'break-word',
                     }}
+                    id="order-act"
                   >
                     {/* UPPER INFO BORDER */}
                     {isView ? (
@@ -1745,6 +1754,12 @@ const OrderDetail = (): JSX.Element => {
                       </div>
                     </div>
                   </CForm>
+                  <SaveAndPrintButtons
+                    marginTop="70px"
+                    elId="order-act"
+                    elToPrintStyle="#sign-section-act {display:block !important}"
+                    hiddenSectionId="sign-section-act"
+                  />
                 </CCol>
               </CCardBody>
             </CCard>
@@ -1851,7 +1866,7 @@ const OrderDetail = (): JSX.Element => {
                   wordBreak: 'break-word',
                 }}
               >
-                <CForm>
+                <CForm id="order-comments">
                   {/* UPPER INFO BORDER */}
                   {isView ? (
                     <div>
@@ -1985,6 +2000,7 @@ const OrderDetail = (): JSX.Element => {
                     {/* BUTTOM BORDER */}
                   </div>
                 </CForm>
+                <SaveAndPrintButtons marginTop="50px" elId="order-comments" />
               </CCol>
             </CCardBody>
           </CCard>
