@@ -22,11 +22,12 @@ const SaveAndPrintButtons = ({
     const options = {
       margin: [2, 2],
       filename: `${elId}.pdf`,
-      jsPDF: { unit: 'cm', format: 'letter', orientation: 'landscape' },
+      jsPDF: { unit: 'cm', format: 'letter', orientation: 'portrait' },
     }
 
     if (elementType === 'pdf') {
       options.margin = [1, 0]
+      options.jsPDF.orientation = 'landscape'
     }
 
     if (!hiddenSectionId) {
@@ -51,6 +52,7 @@ const SaveAndPrintButtons = ({
       type: 'html',
       style: elToPrintStyle + `#${elId} {margin:0 !important}`,
       targetStyles: ['*'],
+      maxWidth: elementType === 'pdf' ? 800 : 650,
     })
   }
 
