@@ -1088,6 +1088,7 @@ const OrderDetail = (): JSX.Element => {
                   </div>
                   <div
                     className="sign-section"
+                    id="sign-section"
                     style={{
                       display: 'none',
                     }}
@@ -1124,8 +1125,9 @@ const OrderDetail = (): JSX.Element => {
                 </CForm>
                 <SaveAndPrintButtons
                   marginTop="200px"
-                  elIdToPrint="order"
-                  elToPrintStyle=".sign-section {display:block !important}"
+                  elId="order"
+                  elToPrintStyle="#sign-section {display:block !important}"
+                  hiddenSectionId="sign-section"
                 />
               </CCol>
             </CCardBody>
@@ -1754,8 +1756,9 @@ const OrderDetail = (): JSX.Element => {
                   </CForm>
                   <SaveAndPrintButtons
                     marginTop="70px"
-                    elIdToPrint="order-act"
+                    elId="order-act"
                     elToPrintStyle="#sign-section-act {display:block !important}"
+                    hiddenSectionId="sign-section-act"
                   />
                 </CCol>
               </CCardBody>
@@ -1997,10 +2000,7 @@ const OrderDetail = (): JSX.Element => {
                     {/* BUTTOM BORDER */}
                   </div>
                 </CForm>
-                <SaveAndPrintButtons
-                  marginTop="50px"
-                  elIdToPrint="order-comments"
-                />
+                <SaveAndPrintButtons marginTop="50px" elId="order-comments" />
               </CCol>
             </CCardBody>
           </CCard>
