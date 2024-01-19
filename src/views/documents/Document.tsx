@@ -76,7 +76,7 @@ const Document = (): JSX.Element => {
 
   return (
     <CContainer>
-      <CCard id="document">
+      <CCard>
         <CCardHeader className="px-4">
           <div>{docName}</div>
         </CCardHeader>
@@ -109,6 +109,7 @@ const Document = (): JSX.Element => {
                       // height: '490px',
                       width: '100%',
                     }}
+                    id="document"
                   >
                     <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.5.141/build/pdf.worker.min.js">
                       <Viewer
@@ -136,7 +137,7 @@ const Document = (): JSX.Element => {
           </div>
         </CCardBody>
       </CCard>
-      <SaveAndPrintButtons marginTop="50px" elIdToPrint="document" />
+      <SaveAndPrintButtons marginTop="50px" elId="document" elementType="pdf" />
     </CContainer>
   )
 }
